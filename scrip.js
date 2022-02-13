@@ -1,3 +1,14 @@
+let popup = document.getElementById(`popupContainer`);
+const popupButton = document.getElementById(`closePopup`);
+const userInput = document.querySelector(`.input-box`);
+const list = document.getElementById(`listItem`);
+const list2 = document.getElementById(`listItem2`);
+const list3 = document.getElementById(`listItem3`);
+const list4 = document.getElementById(`listItem4`);
+const toggleSwitch = document.querySelector(
+    '.theme-switch input[type="checkbox"]'
+);
+
 // get APi
 
 let mainObject = {
@@ -18,7 +29,10 @@ let mainObject = {
             // })
 
         .then((giveResponse) => giveResponse.json())
-            .then((data) => this.showWeather(data));
+            .then((data) => this.showWeather(data))
+            .catch((err) => {
+                controllPopup();
+            });
     },
     showWeather: function(data) {
         const { name } = data;
@@ -45,13 +59,36 @@ let mainObject = {
         document.querySelector(
             `.wind-speed`
         ).innerText = ` wind-speed :  ${speed} KM/H`;
-        document.body.style.backgroundImage =
-            "url('https://source.unsplash.com/1600x900/?" + name + "')";
+        // document.body.style.backgroundImage =
+        //   "url('https://source.unsplash.com/1600x900/?" + name + "')";
     },
     search: function() {
         this.getWeather(document.querySelector(`.input-box`).value);
     },
 };
+
+// try to inseart the value
+
+list.addEventListener(`click`, () => {
+    userInput.value = list.innerText;
+    controllPopup();
+});
+
+list2.addEventListener(`click`, () => {
+    userInput.value = list2.innerText;
+    controllPopup();
+});
+
+list3.addEventListener(`click`, () => {
+    userInput.value = list3.innerText;
+    controllPopup();
+});
+
+list4.addEventListener(`click`, () => {
+    userInput.value = list4.innerText;
+    controllPopup();
+});
+
 // search bar
 document.querySelector(`.search-button`).addEventListener(`click`, function() {
     mainObject.search();
@@ -63,3 +100,25 @@ document
             mainObject.search();
         }
     });
+
+// erorr popup
+
+function controllPopup() {
+    popup.classList.toggle(`controllOpacity`);
+}
+
+// theme handeler
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+        document.documentElement.setAttribute("data-theme", "light");
+    }
+}
+
+toggleSwitch.addEventListener("change", switchTheme, false);
+
+popupButton.addEventListener(`click`, () => {
+    popup.style.transform = `scale(0)`;
+});
