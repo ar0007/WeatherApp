@@ -11,9 +11,40 @@
     />
     <!-- css -->
     <link rel="stylesheet" href="./style.css" />
+    <!-- font-awesome -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css" integrity="sha512-72McA95q/YhjwmWFMGe8RI3aZIMCTJWPBbV8iQY3jy1z9+bi6+jHnERuNrDPo/WGYEzzNs4WdHNyyEr/yXJ9pA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    /> -->
 </head>
 
 <body>
+    <section class="top-nav">
+        <div class="left">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100023918611229"><i class="fab fa-facebook"></i></a></i>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/ariyanshihab/"><i class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                    <a href="https://github.com/ar0007"> <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="switch">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
     <div class="container">
         <div class="weaher-container">
             <div class="top-section">
@@ -36,6 +67,38 @@
             </div>
         </div>
     </div>
+    <!-- popup -->
+    <div class="popup" id="popupContainer">
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Well,! This is Not Google!</h3>
+                <p>make sure you Have spelled the name of your city correctly</p>
+                <h2 class="example">Here is list of Example</h2>
+                <p class="instruction">**( Just clicked on of those list item)</p>
+
+                <div class="card-list">
+                    <ul>
+                        <li id="listItem">Dhaka</li>
+                        <li id="listItem2">Rajshahi</li>
+                        <li id="listItem3">Khulna</li>
+                        <li id="listItem4">Rangpur</li>
+                    </ul>
+                </div>
+                <div class="card-buttoun">
+                    <button id="closePopup">Close Popup</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <h2 class="footer-text">Made with Love by <span class="fotter-link"> <a href="https://www.facebook.com/profile.php?id=100023918611229">Ariyan Shihab</a></span></h2>
+        </div>
+    </footer>
     <!-- script -->
     <script src="./scrip.js"></script>
 </body>
