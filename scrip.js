@@ -34,7 +34,7 @@ let mainObject = {
                 controllPopup();
             });
     },
-    console.log(`hello`)
+    
     showWeather: function(data) {
         const { name } = data;
         const { icon, description } = data.weather[0];
